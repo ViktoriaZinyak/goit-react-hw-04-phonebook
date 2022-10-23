@@ -19,7 +19,7 @@ const App = () => {
     return parsedContacts ?? userContacts;
   };
 
-  const [contacts, setContacts] = useState(getContacts());
+  const [contacts, setContacts] = useState(getContacts);
 
   const [filter, setFilter] = useState('');
 
@@ -35,7 +35,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
+    localStorage.setItem(KEY, JSON.stringify(contacts));
   }, [contacts]);
 
   // useEffect(() => {
